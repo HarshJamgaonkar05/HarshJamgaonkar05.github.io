@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Yashvi!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Happy Birthday Yashvi!</h2>
+
+    <div class="button-container">
+      <div class="image-button" onclick="showLetter()">
+        <img src="love-letter-7241177.svg" alt="Love Letter">
+      </div>
+      <div class="image-button" onclick="showTimeline()">
+        <img src="filmroll.png" alt="Film Roll">
+      </div>
+    </div>
+
+    <!-- Letter Popup -->
+    <div id="letter-popup" class="popup">
+      <span class="close-btn" onclick="closeLetter()">×</span>
+      <img src="Letter.png" alt="Letter" class="popup-image">
+    </div>
+
+    <!-- Timeline Popup (with slider) -->
+    <div id="timeline-popup" class="popup">
+      <span class="close-btn" onclick="closeTimeline()">×</span>
+      <div class="slider">
+        <button class="nav-btn" onclick="prevSlide()">←</button>
+        <div class="slider-content">
+          <div id="timeline-media-container"></div>
+          <div id="timeline-caption" class="caption"></div>
+        </div>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+      </div>
+    </div>
+
+    <!-- Floating hearts -->
+    <div class="heart" style="top: 25%; left: 90%;"></div>
+    <div class="heart" style="top: 50%; left: 10%;"></div>
+    <div class="heart" style="top: 20%; left: 20%;"></div>
+    <div class="heart" style="top: 70%; left: 80%;"></div>
+    <div class="heart" style="top: 30%; left: 50%;"></div>
+    <div class="heart" style="top: 90%; left: 20%;"></div>
+    <div class="heart" style="top: 90%; left: 60%;"></div>
+    <div class="heart" style="top: 10%; left: 10%;"></div>
+
+    <!-- Confetti canvas -->
+    <canvas id="confetti-canvas"></canvas>
+  </div>
+
+  <!-- Background Music Audio -->
+  <audio id="bg-music" src="bgmusic.mp3" preload="auto" loop></audio>
+
+  <!-- Mute Button -->
+  <button id="mute-btn">🔇</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

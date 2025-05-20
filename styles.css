@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Cormorant+Garamond:wght@500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive;
+    background: #fff0f5;
+    overflow-x: hidden;
+    animation: fadeIn 1.2s ease-out both;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 6em;
+    color: #b95c7a;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.2s ease 0.2s both;
+}
+
+.button-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeIn 1.2s ease 0.4s both;
+}
+
+.image-button img {
+    width: 220px;
+    height: 220px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(185, 92, 122, 0.3);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border: 2px solid #f5c2c7;
+    padding: 20px;
+}
+
+.image-button img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 25px rgba(185, 92, 122, 0.5);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,240,245,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    flex-direction: column;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.popup.show {
+    display: flex;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.popup-image,
+.popup-media {
+    max-width: 90%;
+    max-height: 80vh;
+    border: 4px solid #b95c7a;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(185, 92, 122, 0.4);
+    margin-top: 100px;
+}
+
+#mute-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  background-color: #b95c7a;
+  border-radius: 50%;
+}
+
+.caption {
+    margin-top: 15px;
+    font-size: 1.5em;
+    font-family: 'Cormorant Garamond', serif;
+    color: #b95c7a;
+    background: rgba(205, 203, 203, 0.6);
+    border: 1px solid #f2c9d1;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(185, 92, 122, 0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 2.5em;
+    color: #b95c7a;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    padding: 0px 10px 10px 12px;
+}
+
+.close-btn:hover {
+    color: #8b3f5d;
+    transform: scale(1.2);
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+}
+
+.nav-btn {
+    font-size: 2em;
+    color: #b95c7a;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    transition: transform 0.2s;
+}
+
+.nav-btn:hover {
+    transform: scale(1.2);
+    color: #8b3f5d;
+}
+
+.heart {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png');
+    background-size: cover;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.5;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 3em;
+    }
+    .image-button img {
+        width: 140px;
+        height: 140px;
+        padding: 10px;
+    }
+    .popup-media,
+    .popup-image {
+        max-width: 90%;
+        max-height: 50vh;
+    }
+    .caption {
+        font-size: 1em;
+    }
+    .nav-btn {
+        font-size: 1.5em;
+        padding: 10px;
+    }
+}
+
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
